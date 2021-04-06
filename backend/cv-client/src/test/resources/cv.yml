@@ -1,0 +1,16 @@
+cvuser: user
+cvpassword: password
+api:
+  version: default
+  url: http://cv-webserver:81/SearchSvc/CVWebService.svc
+apis:
+  - name: login
+    type: rest
+    url:  'POST /Login'
+    header: '"Content-Type":"application/xml","Accept":"application/json"'
+    version:  default
+  - name: logout
+    type: rest
+    url:  'POST /Logout'
+    header: '"Accept":"application/json"'
+    version:  default

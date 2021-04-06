@@ -1,0 +1,11 @@
+<DM2ContentIndexing_RetrieveToClientReq mode="2" serviceType="1">
+    <userInfo userGuid=""/>
+    <header>
+        <srcContent clientId="" appTypeId="" instanceId="" backupSetId="" subclientId="" fromTime="" toTime=""/>
+        <destination clientId="" clientName="" inPlace="">
+            <destPath val=""/>
+        </destination>
+        <filePaths val=""/>
+    </header>
+    <advanced unconditionalOverwrite="0" restoreDataAndACL="0" restoreDeletedFiles="0"/>
+</DM2ContentIndexing_RetrieveToClientReq>

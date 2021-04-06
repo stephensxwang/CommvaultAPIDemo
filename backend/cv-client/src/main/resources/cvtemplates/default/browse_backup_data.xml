@@ -1,0 +1,19 @@
+<databrowse_BrowseRequest opType="browse">
+    <session sessionId="1"/>
+    <entity clientName="" applicationId="" clientId="" subclientId="" backupsetId="" instanceId=""/>
+    <paths path="\"/>
+    <timeRange toTime="" fromTime=""/>
+    <options showDeletedFiles="0" restoreIndex="1"/>
+    <mode mode="2"/>
+    <queries type="0" queryId="dataQuery">
+        <aggrParam aggrType="4" field="0"/>
+    </queries>
+    <queries type="0" queryId="dataQuery">
+        <dataParam>
+            <paging firstNode="0" skipNode="0" pageSize="50"/>
+            <sortParam ascending="1">
+                <sortBy val="0"/>
+            </sortParam>
+        </dataParam>
+    </queries>
+</databrowse_BrowseRequest>

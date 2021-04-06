@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.2.0.RELEASE</version>
+    </parent>
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.commvault</groupId>
+	<artifactId>cloud-platform</artifactId>
+	<version>0.1</version>
+    <packaging>pom</packaging>
+	<name>${project.groupId}:${project.artifactId}</name>
+	<description>Commvault Cloud Platform</description>
+	
+	<properties>
+		<java.version>1.8</java.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+	</properties>
+
+    <profiles>
+        <profile>
+            <id>default</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <modules>
+                <module>cv-automation</module>
+                <module>cv-client</module>
+                <module>cv-package</module>
+            </modules>
+        </profile>
+        <profile>
+            <id>package</id>
+            <modules>
+                <module>cv-automation</module>
+                <module>cv-client</module>
+                <module>cv-package</module>
+            </modules>
+        </profile>
+    </profiles>
+	
+	<dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.commvault</groupId>
+                <artifactId>cv-client</artifactId>
+                <version>0.1</version>
+            </dependency>
+            <dependency>
+                <groupId>com.commvault</groupId>
+                <artifactId>cv-automation</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.0</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

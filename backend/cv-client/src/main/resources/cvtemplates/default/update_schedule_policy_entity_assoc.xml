@@ -1,0 +1,8 @@
+<TMMsg_ModifyTaskReq>
+  <taskInfo taskOperation="MODIFY">
+    <associations clientName="" appName="" backupsetName="" instanceName="" subclientName="" />
+    <task>
+        <task taskName=""/>
+    </task>
+  </taskInfo>
+</TMMsg_ModifyTaskReq>

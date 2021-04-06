@@ -1,0 +1,168 @@
+apis:
+  - name: login
+    type: rest
+    url:  'POST /Login'
+    header: '"Content-Type":"application/xml","Accept":"application/json"'
+    version:  default
+
+  - name: logout
+    type: rest
+    url:  'POST /Logout'
+    header: '"Accept":"application/json"'
+    version:  default
+
+  - name: get_client
+    type: rest
+    url:  'GET /Client'
+    header: '"Accept":"application/json"'
+    version:  default
+
+  - name: get_client_group
+    type: rest
+    url:  'GET /ClientGroup'
+    header: '"Accept":"application/json"'
+    version:  default
+
+  - name: create_client_group
+    type: rest
+    url:  'POST /ClientGroup'
+    header: '"Content-Type":"application/xml","Accept":"application/json"'
+    version:  default
+
+  - name: delete_client_group
+    type: rest
+    url:  'DELETE /ClientGroup/{clientGroupId}'
+    header: '"Accept":"application/json"'
+    version:  default
+
+  - name: update_client_group
+    type: rest
+    url:  'POST /ClientGroup/{clientGroupId}'
+    header: '"Content-Type":"application/xml","Accept":"application/json"'
+    version:  default
+
+  - name: get_subclient_by_client_name
+    type: rest
+    url:  'GET /Subclient?clientName={clientName}'
+    header: '"Accept":"application/json"'
+    version:  default
+
+  - name: create_subclient
+    type: rest
+    url:  'POST /Subclient'
+    header: '"Content-Type":"application/xml","Accept":"application/json"'
+    version:  default
+
+  - name: update_subclient_by_id
+    type: rest
+    url:  'POST /Subclient/{subclientId}'
+    header: '"Content-Type":"application/xml","Accept":"application/json"'
+    version:  default
+
+  - name: update_schedule_policy_entity_assoc
+    type: rest
+    url:  'PUT /Task'
+    header: '"Content-Type":"application/xml","Accept":"application/json"'
+    version:  default
+
+  - name: get_schedules_by_subclient_id
+    type: rest
+    url:  'GET /Schedules?subclientId={subclientId}'
+    header: '"Accept":"application/json"'
+    version:  default
+
+  - name: browse_backup_data
+    type: rest
+    url:  'POST /DoBrowse'
+    header: '"Content-Type":"application/xml","Accept":"application/json"'
+    version:  default
+
+  - name: restore_backup_data
+    type: rest
+    url:  'POST /retrieveToClient'
+    header: '"Content-Type":"application/xml","Accept":"application/json"'
+    version:  default
+
+  - name: get_subclient_by_client_name
+    type: rest
+    url:  'GET /Subclient?clientName={clientName}'
+    header: '"Accept":"application/json"'
+    version:  default
+
+  - name: get_subclient_properties
+    type: rest
+    url:  'GET /Subclient/{subclientId}'
+    header: '"Accept":"application/json"'
+    version:  default
+
+  - name: list_media_for_a_job
+    type: cli
+    url:  'qlist media -j {jobId}'
+    header: '"Content-Type":"application/x-www-form-urlencoded","Accept":"application/json"'
+    version:  default
+
+  - name: get_job_summary
+    type: rest
+    url:  'GET /Job/{jobId}'
+    header: '"Accept":"application/json"'
+    version:  default
+
+  - name: get_db2_backup_job_info
+    type: cli
+    url:  "qoperation execscript -sn QS_QueryDB2Backup.sql -si '{clientName}' -si '{instanceName}' -si '{backupsetName}' -si 'data'"
+    header: '"Content-Type":"application/x-www-form-urlencoded","Accept":"application/json"'
+    version:  default
+
+  - name: restore_db2_backup_data
+    type: cli
+    url:  'qoperation execute'
+    header: '"Content-Type":"application/x-www-form-urlencoded","Accept":"application/json"'
+    version:  default
+
+  - name: restore_oracle_backup_data
+    type: cli
+    url:  'qoperation execute'
+    header: '"Content-Type":"application/x-www-form-urlencoded","Accept":"application/json"'
+    version:  default
+
+  - name: restore_mssql_backup_data
+    type: cli
+    url:  'qoperation execute'
+    header: '"Content-Type":"application/x-www-form-urlencoded","Accept":"application/json"'
+    version:  default
+
+  - name: restore_mysql_backup_data
+    type: cli
+    url:  'qoperation execute'
+    header: '"Content-Type":"application/x-www-form-urlencoded","Accept":"application/json"'
+    version:  default
+
+  - name: get_job_list
+    type: rest
+    url:  'POST /Jobs'
+    header: '"Content-Type":"application/json","Accept":"application/json"'
+    version:  default
+
+  - name: get_mssql_restoreoptions
+    type: rest
+    url:  'POST /SQL/RestoreOptions'
+    header: '"Content-Type":"application/json","Accept":"application/json"'
+    version:  default
+
+  - name: execute_workflow
+    type: rest
+    url:  'POST /Workflow/{workflowName}/Action/Execute?outputOnly=false'
+    header: '"Content-Type":"application/json","Accept":"application/json"'
+    version:  default
+
+  - name: restore_ndmp_backup_data
+    type: cli
+    url:  'qoperation execute'
+    header: '"Content-Type":"application/x-www-form-urlencoded","Accept":"application/json"'
+    version:  default
+
+  - name: install_client
+    type: cli
+    url:  'qoperation execute'
+    header: '"Content-Type":"application/x-www-form-urlencoded","Accept":"application/json"'
+    version:  default

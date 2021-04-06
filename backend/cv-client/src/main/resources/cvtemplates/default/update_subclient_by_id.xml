@@ -1,0 +1,148 @@
+<App_UpdateSubClientPropertiesRequest>
+	<association>
+		<entity>
+			<appName />
+			<clientName />
+			<instanceName /> 
+			<backupsetName />
+			<subclientName/>
+		</entity>
+	</association>
+	<newName/>
+	<subClientProperties>
+		<contentOperationType>ADD</contentOperationType>
+		<commonProperties>
+			<turboNASClient>
+				<clientName/>
+			</turboNASClient>
+			<encryptionFlag />
+			<description />
+			<enableBackup />
+			<numberOfBackupStreams />
+			<onDemandSubClient />
+			<allowMultipleDataReaders />
+			<storageDevice>
+				<networkAgents />
+				<softwareCompression />
+				<throttleNetworkBandwidth />
+				<applicableReadSize />
+				<dataBackupStoragePolicy>
+					<storagePolicyName />
+				</dataBackupStoragePolicy>
+				<deDuplicationOptions>
+					<enableDeduplication />
+					<generateSignature />
+				</deDuplicationOptions>
+			</storageDevice>
+			<snapCopyInfo>
+				<snapToTapeProxyToUseSource />
+				<isRMANEnableForTapeMovement />
+				<isSnapBackupEnabled />
+				<snapToTapeSelectedEngine>
+					<snapShotEngineName />
+				</snapToTapeSelectedEngine>
+				<snapToTapeProxyToUse>
+					<clientName />
+				</snapToTapeProxyToUse>
+			</snapCopyInfo>
+			<prepostProcess>
+				<preScanCommand />
+				<postScanCommand />
+				<preBackupCommand />
+				<postBackupCommand />
+				<runPostBackup />
+				<runAs />
+				<prepostUserName>
+					<userName />
+					<password />
+				</prepostUserName>
+			</prepostProcess>
+			<expandSymbolicLinks />
+		</commonProperties>
+		<fsSubClientProp>
+			<useGlobalFilters />
+			<useVSS />
+			<vssOptions/>
+			<useVssForAllFilesOptions/>
+			<useVSSForSystemState />
+			<backupSystemState />
+			<backupSystemStateforFullBkpOnly />
+			<backupFilesQualifiedForArchive/>
+			<oneTouchSubclient />
+			<retentionRule/>
+			<daysToKeepItems/>
+			<keepAtLeastPreviousVersions/>
+			<deleteArchiveJob/>
+			<deleteArchiveJobAfterDays/>
+			<userDeletedStubRetention/>
+			<userDeletedStubRetentionDays/>
+			<enableOnePass/>
+			<diskCleanupRules>
+  				<enableArchivingWithRules/>
+  				<startCleaningIfLessThan/>
+  				<stopCleaningIfupto/>
+  				<fileAccessTimeOlderThan/>
+  				<fileModifiedTimeOlderThan/>
+  				<fileCreatedTimeOlderThan/>
+  				<fileSizeGreaterThan/>
+  				<maximumFileSize/>
+  				<archiveReadOnlyFiles/>
+  				<afterArchivingRule/>
+  				<useNativeSnapshotToPreserveFileAccessTime/>
+  			</diskCleanupRules>
+			<catalogAdditional/>
+			<catalogACL/>
+			<deletePSTFileOnly/>
+			<scanOption/>
+			<preserveFileAccessTime/>
+			<checkArchiveBit/>
+		</fsSubClientProp>
+		<oracleSubclientProp>
+			<selectiveOnlineFull/>
+			<data/>
+			<backupMode/>
+			<backupControlFile/>
+			<backupSPFile/>
+			<protectBackupRecoveryArea/>
+			<dataFilesPerBFS/>
+			<maxBackupSetSizeInKB/>
+			<archiveFilesPerBFS/>
+			<maxOpenFiles/>
+			<oracleTag/>
+			<lightsOutScript/>
+			<warning/>
+			<delayTimeinMin/>
+			<sleepTimeinMin/>
+			<sleepTimeinSec/>
+			<triesNumber/>
+			<useSQLConntect/>
+			<startupPFile/>
+			<skipReadOnly/>
+			<skipOffline/>
+			<skipInaccessible/>
+			<validate/>
+			<enableTableBrowse/>
+			<mergeIncImageCopies/>
+			<resyncCatalog/>
+			<backupArchiveLog/>
+			<archiveDelete/>
+			<disableSwitchCurrentLog/>
+			<selectArchiveLogDestForBackup/>
+			<archiveLogDestForBackupOpType/>
+			<archiveLogDestForBackup/>
+			<selectArchiveLogDestForDelete/>
+			<archiveLogDestForDeleteOpType/>
+			<archiveLogDestForDelete/>
+			<dataThresholdStreams/>
+		</oracleSubclientProp>
+		<content>
+			<path />
+			<excludePath />
+			<includePath />
+		</content>
+		<impersonateUser>
+			<userName />
+			<password />
+		</impersonateUser>
+	</subClientProperties>
+</App_UpdateSubClientPropertiesRequest>
