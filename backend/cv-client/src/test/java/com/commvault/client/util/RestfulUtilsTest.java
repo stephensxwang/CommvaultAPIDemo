@@ -36,7 +36,7 @@ public class RestfulUtilsTest {
 
         Map<String, Object> headers = new HashMap<>();
         headers.put("Content-Type", "text/xml");
-        Assert.assertEquals("mock response here", RestfulUtils.doGetAPIRequest("http://localhost:8500/v1/catalog/service/test_service", headers));
+        Assert.assertTrue(RestfulUtils.doGetAPIRequest("http://localhost:8500/v1/catalog/service/test_service", headers).startsWith("mock response here"));
     }
 
     @Test
