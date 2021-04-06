@@ -2,7 +2,7 @@ cvuser: user
 cvpassword: password
 api:
   version: default
-  url: http://cv-webserver:81/SearchSvc/CVWebService.svc
+  url: http://localhost:81/SearchSvc/CVWebService.svc
 apis:
   - name: login
     type: rest
