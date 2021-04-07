@@ -7,7 +7,7 @@ public class CvPropertiesTest {
     @Test
     public void testGetProperty(){
         Assert.assertEquals("default", CvProperties.getInstance().getProperty(CvConstants.PROPERTY_API_VERSION));
-        Assert.assertEquals("http://localhost:81/SearchSvc/CVWebService.svc", CvProperties.getInstance().getProperty(CvConstants.PROPERTY_API_REST_URLPREFIX));
+        Assert.assertEquals("http://localhost:8081/SearchSvc/CVWebService.svc", CvProperties.getInstance().getProperty(CvConstants.PROPERTY_API_REST_URLPREFIX));
         Assert.assertNull(CvProperties.getInstance().getProperty("notexist"));
     }
 
@@ -15,6 +15,6 @@ public class CvPropertiesTest {
     public void testReloadProperties(){
         CvProperties.getInstance().reloadProperties();
         Assert.assertEquals("default", CvProperties.getInstance().getProperty(CvConstants.PROPERTY_API_VERSION));
-        Assert.assertEquals("http://localhost:81/SearchSvc/CVWebService.svc", CvProperties.getInstance().getProperty(CvConstants.PROPERTY_API_REST_URLPREFIX));
+        Assert.assertEquals("http://localhost:8081/SearchSvc/CVWebService.svc", CvProperties.getInstance().getProperty(CvConstants.PROPERTY_API_REST_URLPREFIX));
     }
 }

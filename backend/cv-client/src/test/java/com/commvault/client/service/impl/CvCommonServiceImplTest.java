@@ -16,7 +16,7 @@ public class CvCommonServiceImplTest {
     private CvCommonServiceImpl cvCommonServiceImpl = new CvCommonServiceImpl();
 
     @Rule
-    public WireMockRule wireMockRule = new WireMockRule(WireMockConfiguration.options().port(81));
+    public WireMockRule wireMockRule = new WireMockRule(WireMockConfiguration.options().port(8081));
 
     @Test
     public void testLogin(){

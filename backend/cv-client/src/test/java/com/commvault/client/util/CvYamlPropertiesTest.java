@@ -15,6 +15,6 @@ public class CvYamlPropertiesTest {
     public void testReloadProperties(){
         CvYamlProperties.getInstance().reloadProperties();
         Assert.assertEquals("password", CvYamlProperties.getInstance().getProperty("cvpassword"));
-        Assert.assertEquals("http://localhost:81/SearchSvc/CVWebService.svc", CvYamlProperties.getInstance().getProperty("url"));
+        Assert.assertEquals("http://localhost:8081/SearchSvc/CVWebService.svc", CvYamlProperties.getInstance().getProperty("url"));
     }
 }
