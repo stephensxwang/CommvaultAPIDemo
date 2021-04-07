@@ -1,7 +1,7 @@
 {
-  "name": "vue-project",
+  "name": "commvault-api-demo-frontend",
   "version": "1.0.0",
-  "description": "A Vue.js project",
+  "description": "A Vue.js project using Element UI",
   "author": "stephenwang <stephenwang@commvault.com>",
   "private": true,
   "scripts": {

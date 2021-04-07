@@ -1,6 +1,6 @@
-# vue-project
+# Frontend Demo
 
-> A Vue.js project
+> A Vue.js project using Element UI
 
 ## Build Setup
 
@@ -12,10 +12,10 @@ npm install
 npm run dev
 
 # build for production with minification
-npm run build
+npm run build -- prod
 
 # build for production and view the bundle analyzer report
-npm run build --report
+npm run build --report -- prod
 
 # run unit tests
 npm run unit
