@@ -33,8 +33,8 @@ jobs:
     # Runs a set of commands using the runners shell
     - name: Clean install dependencies and build
       run: |
-        npm ci
-        npm run build -- prod
+        npm --prefix ./frontend ci
+        npm --prefix ./frontend run build -- prod
     - name: Copy frontend complied source to backend
       run: |
         mkdir -p backend/cv-automation/src/main/resources/static
