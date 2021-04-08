@@ -12,7 +12,7 @@ Commvault REST (Representational State Transfer) APIs represent operations that 
 A REST API client should support the following:
 
 * HTTPS and basic authentication
-For information about configuring HTTPS, see [Configuring Secured Access on a Web Service](https://documentation.commvault.com/commvault/v11_sp20/article?p=119525.htm).
+>> For information about configuring HTTPS, see [Configuring Secured Access on a Web Service](https://documentation.commvault.com/commvault/v11_sp20/article?p=119525.htm).
 
 * HTTP GET, POST, and DELETE requests
 * Ability to set and read request and response headers
