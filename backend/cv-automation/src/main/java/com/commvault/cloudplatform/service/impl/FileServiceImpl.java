@@ -35,6 +35,10 @@ public class FileServiceImpl implements FileService {
                 wb = new HSSFWorkbook(file.getInputStream());
             } else if(file.getContentType().equals("application/vnd.openxmlformats-officedocument.spreadsheetml.sheet")){
                 wb = new XSSFWorkbook(file.getInputStream());
+            } else if(file.getOriginalFilename().trim().endsWith(".xls")){
+                wb = new HSSFWorkbook(file.getInputStream());
+            } else if(file.getOriginalFilename().trim().endsWith(".xlsx")){
+                wb = new XSSFWorkbook(file.getInputStream());
             } else {
                 logger.error("Invalid content type");
                 throw new ApplicationException("Content type not allowed");

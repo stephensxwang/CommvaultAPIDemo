@@ -71,6 +71,7 @@ export default {
           that.cols = response.data.titleList;
           that.tableData = response.data.contentList;
           that.$refs.upload.clearFiles();
+		  that.file_path = [];
         }
       })
       .catch(function (error) {
