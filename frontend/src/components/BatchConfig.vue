@@ -81,6 +81,8 @@ export default {
           message: that.GLOBAL.getAxiosErrorMessage(error),
           showClose: true
         });
+        that.$refs.upload.clearFiles();
+        that.file_path = [];
       }).then(function () {
         // always executed
         loading.close();
@@ -104,7 +106,7 @@ export default {
       const axios = this.GLOBAL.getAxiosInstance(this);
       var that = this;
       axios.post(
-        '/batch_config/config',
+        '/batch_config_groovy/config',
         {
           contentList: that.tableData
         }
