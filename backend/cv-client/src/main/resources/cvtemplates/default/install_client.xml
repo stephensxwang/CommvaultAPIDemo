@@ -15,7 +15,13 @@
         <alertName></alertName>
       </alert>
     </task>
-    <associations/>
+    <associations>
+      <subclientName></subclientName>
+      <backupsetName></backupsetName>
+      <instanceName></instanceName>
+      <appName></appName>
+      <clientName></clientName>
+    </associations>
     <subTasks>
       <subTask>
         <subTaskType>ADMIN</subTaskType>
@@ -32,8 +38,8 @@
           <clientInstallOption>
             <clientDetails>
               <clientEntity>
-                <commCellName></commCellName>
-                <clientName></clientName>
+                <commCellName>win-2012-server</commCellName>
+                <clientName>WIN-2012-TEST</clientName>
               </clientEntity>
             </clientDetails>
             <installOSType>WINDOWS</installOSType>
@@ -45,7 +51,7 @@
                 <userName>admin</userName>
               </User>
               <Operationtype>INSTALL_CLIENT</Operationtype>
-              <CommServeHostName></CommServeHostName>
+              <CommServeHostName>win-2012-server</CommServeHostName>
               <CommServeInfo/>
               <clientComposition>
                 <overrideSoftwareCache>false</overrideSoftwareCache>
@@ -83,12 +89,6 @@
                 <stopOracleServices>false</stopOracleServices>
                 <skipClientsOfCS>false</skipClientsOfCS>
                 <advancedOptions></advancedOptions>
-                <numberOfStreams>0</numberOfStreams>
-                <unixGroup></unixGroup>
-                <unixGroupAccess>7</unixGroupAccess>
-                <unixOtherAccess>5</unixOtherAccess>
-                <unixTempDirectory></unixTempDirectory>
-                <singleInterfaceBinding>false</singleInterfaceBinding>
                 <restoreOnlyAgents>false</restoreOnlyAgents>
                 <overrideClientInfo>true</overrideClientInfo>
                 <firewallInstall>
@@ -98,6 +98,7 @@
                   <proxyClientName></proxyClientName>
                   <proxyHostName></proxyHostName>
                   <portNumber>0</portNumber>
+                  <encryptedTunnel>true</encryptedTunnel>
                 </firewallInstall>
                 <skipConfigureLaptopBackupMonitor>false</skipConfigureLaptopBackupMonitor>
                 <skipConfigureProcessManager>false</skipConfigureProcessManager>
@@ -109,15 +110,12 @@
               </installFlags>
             </installerOption>
             <clientAuthForJob>
-              <userName></userName>
-              <password></password>
+              <userName>.\administrator</userName>
+              <password>||#5!M2E2ZjA4NjAwYWI1NDFkMmIyYzAzZGVlNTRmMTBiNzAz&#xA;</password>
             </clientAuthForJob>
             <reuseADCredentials>false</reuseADCredentials>
             <sshKeyFileLocation></sshKeyFileLocation>
             <sshKeyFilePassphrase/>
-            <useSSHKey>false</useSSHKey>
-            <useSSHKeyPassphrase>false</useSSHKeyPassphrase>
-            <useSSHNCPortNumber>false</useSSHNCPortNumber>
             <sshPortNumber></sshPortNumber>
           </clientInstallOption>
         </adminOpts>
@@ -127,6 +125,7 @@
             <startWhenActivityIsLow>false</startWhenActivityIsLow>
           </startUpOpts>
           <jobDescription></jobDescription>
+          <notifyUserOnJobCompletion>false</notifyUserOnJobCompletion>
         </commonOpts>
       </options>
       <subTaskOperation>OVERWRITE</subTaskOperation>

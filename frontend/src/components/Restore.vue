@@ -431,7 +431,7 @@
                   type: 'success',
                   message: 'Restore job submitted success, id:' + jobId
                 });
-                that.formInline.jobId = jobId;
+                that.formInline.jobId = String(jobId);
                 that.formInline.status = '';
                 that.formInline.percentComplete = 0;
               }
@@ -488,7 +488,7 @@
                   type: 'success',
                   message: 'Restore job submitted success, id:' + jobId
                 });
-                that.formInline.jobId = jobId;
+                that.formInline.jobId = String(jobId);
                 that.formInline.status = '';
                 that.formInline.percentComplete = 0;
               }
@@ -543,7 +543,7 @@
                   type: 'success',
                   message: 'Restore job submitted success, id:' + jobId
                 });
-                that.formInline.jobId = jobId;
+                that.formInline.jobId = String(jobId);
                 that.formInline.status = '';
                 that.formInline.percentComplete = 0;
               }
@@ -599,7 +599,7 @@
                   type: 'success',
                   message: 'Restore job submitted success, id:' + jobId
                 });
-                that.formInline.jobId = jobId;
+                that.formInline.jobId = String(jobId);
                 that.formInline.status = '';
                 that.formInline.percentComplete = 0;
               }
@@ -653,7 +653,7 @@
                   type: 'success',
                   message: 'Restore job submitted success, id:' + jobId
                 });
-                that.formInline.jobId = jobId;
+                that.formInline.jobId = String(jobId);
                 that.formInline.status = '';
                 that.formInline.percentComplete = 0;
               }

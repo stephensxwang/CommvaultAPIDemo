@@ -1117,6 +1117,27 @@ public class CvCommonServiceImpl implements CvCommonService {
     }
 
     @Override
+    public Map<String, Object> restoreFilesystemBackupData(String srcClientName, String srcSubclientName, String srcBackupsetName, String srcInstanceName, String srcPath, String fromTime, String toTime, String targetClientName, String inPlace, String destPath, String token){
+        HashMap<String, Object> properties = new HashMap<String, Object>();
+        properties.put("//associations/subclientName", srcSubclientName);
+        properties.put("//associations/backupsetName", srcBackupsetName);
+        properties.put("//associations/instanceName", srcInstanceName);
+        properties.put("//associations/clientName", srcClientName);
+        properties.put("//backupset/backupsetName", srcBackupsetName);
+        properties.put("//backupset/clientName", srcClientName);
+        properties.put("//fromTimeValue", fromTime);
+        properties.put("//toTimeValue", toTime);
+        properties.put("//destPath", destPath);
+        properties.put("//destClient/clientName", targetClientName);
+        properties.put("//inPlace", inPlace);
+        properties.put("//sourceItem", srcPath);
+
+        Map<String, Object> result = processRequest("restore_filesystem_backup_data", CvProperties.getInstance().getProperty(CvConstants.PROPERTY_API_VERSION), token, null, properties, false);
+
+        return result;
+    }
+
+    @Override
     public Map<String, Object> restoreNdmpBackupData(String srcClientName, String srcSubclientName, String srcBackupsetName, String srcInstanceName, String srcPath, String fromTime, String toTime, String targetClientName, String inPlace, String destPath, String token){
         HashMap<String, Object> properties = new HashMap<String, Object>();
         properties.put("//associations/subclientName", srcSubclientName);
@@ -1325,6 +1346,7 @@ public class CvCommonServiceImpl implements CvCommonService {
         HashMap<String, Object> properties = new HashMap<String, Object>();
         properties.put("//clientEntity/commCellName", commCellName);
         properties.put("//clientEntity/clientName", clientName);
+        properties.put("//CommServeHostName", commCellName);
         properties.put("//installOSType", osType.toUpperCase());
         properties.put("//clientAuthForJob/userName", userName);
         properties.put("//clientAuthForJob/password", password);
@@ -1333,7 +1355,7 @@ public class CvCommonServiceImpl implements CvCommonService {
             for(String componentName:componentNameList) {
                 Element componentInfoNode = document.createElement("componentInfo");
 
-                Node componentNameNode = document.createElement("componentName");
+                Node componentNameNode = document.createElement("ComponentName");
                 componentNameNode.setTextContent(componentName);
                 componentInfoNode.appendChild(componentNameNode);
 
@@ -1477,7 +1499,9 @@ public class CvCommonServiceImpl implements CvCommonService {
         try{
             if(type.equalsIgnoreCase(CvConstants.API_CLI)) {
                 if(StringUtils.isNotBlank(body)){
-                    body = "command=" + api + "&inputRequestXML=" + URLEncoder.encode(DomUtils.documentToString(doc),"UTF-8");
+                    String xml = DomUtils.documentToString(doc);
+                    xml = xml.replace("&amp;", "&");
+                    body = "command=" + api + "&inputRequestXML=" + URLEncoder.encode(xml,"UTF-8");
                 } else {
                     body = "command=" + api;
                 }

@@ -106,7 +106,7 @@ export default {
       const axios = this.GLOBAL.getAxiosInstance(this);
       var that = this;
       axios.post(
-        '/batch_config_groovy/config',
+        '/batch_config/config',
         {
           contentList: that.tableData
         }

@@ -10,6 +10,7 @@ import com.commvault.cloudplatform.dto.Db2DataRestoreView;
 import com.commvault.cloudplatform.dto.MssqlDataRestoreView;
 import com.commvault.cloudplatform.dto.OracleDataRestoreView;
 import com.commvault.cloudplatform.exception.ApplicationException;
+import org.apache.commons.io.filefilter.FalseFileFilter;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -157,7 +158,7 @@ public class DataRestoreController {
                     List<String> ids = CvUtils.getMapValue("jobIds", resp);
                     restoreJobId = Integer.valueOf(ids.get(0));
                 } else {
-                    resp = cvCommonService.restoreBackupData(
+                    /*resp = cvCommonService.restoreBackupData(
                             String.valueOf(srcSubclient.get("clientId")),
                             String.valueOf(srcSubclient.get("applicationId")),
                             String.valueOf(srcSubclient.get("instanceId")),
@@ -173,7 +174,28 @@ public class DataRestoreController {
                             token
                     );
 
-                    restoreJobId = (Integer) resp.get("jobId");
+                    restoreJobId = (Integer) resp.get("jobId");*/
+                    SimpleDateFormat dateFormater = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+                    resp = cvCommonService.restoreFilesystemBackupData(
+                            String.valueOf(srcSubclient.get("clientName")),
+                            String.valueOf(srcSubclient.get("subclientName")),
+                            String.valueOf(srcSubclient.get("backupsetName")),
+                            String.valueOf(srcSubclient.get("instanceName")),
+                            dataRestoreView.getFilePaths().get(0),
+                            dateFormater.format(((dateFormater.parse(dataRestoreView.getBackupTime()).getTime())/1000L - 1L)*1000L),
+                            dateFormater.format(((new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").parse(dataRestoreView.getBackupTime()).getTime())/1000L + 86401L)*1000L),
+                            dataRestoreView.getTargetClientName(),
+                            "false",
+                            dataRestoreView.getDestPath(),
+                            token
+                    );
+                    String errorMessage = CvUtils.getErrorMessage(resp);
+                    if(StringUtils.isNotBlank(errorMessage)){
+                        throw new Exception(errorMessage);
+                    }
+
+                    List<String> ids = CvUtils.getMapValue("jobIds", resp);
+                    restoreJobId = Integer.valueOf(ids.get(0));
                 }
             } catch (Exception e) {
                 logger.error("Failed to restore backup data for client: {} subclient: {}", dataRestoreView.getSrcClientName(), srcSubclient.get("subclientName"), e);

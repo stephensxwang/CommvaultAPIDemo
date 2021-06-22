@@ -155,6 +155,12 @@ apis:
     header: '"Content-Type":"application/json","Accept":"application/json"'
     version:  default
 
+  - name: restore_filesystem_backup_data
+    type: cli
+    url:  'qoperation execute'
+    header: '"Content-Type":"application/x-www-form-urlencoded","Accept":"application/json"'
+    version:  default
+
   - name: restore_ndmp_backup_data
     type: cli
     url:  'qoperation execute'

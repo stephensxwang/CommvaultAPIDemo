@@ -192,6 +192,8 @@ public interface CvCommonService {
 
     public Map<String, Object> restoreBackupData(String srcClientId, String appTypeId, String instanceId, String backupSetId, String subclientId, String fromTime, String toTime, String targetClientId, String targetClientName, String inPlace, String destPath, List<String> filePaths, String token);
 
+    public Map<String, Object> restoreFilesystemBackupData(String srcClientName, String srcSubclientName, String srcBackupsetName, String srcInstanceName, String srcPath, String fromTime, String toTime, String targetClientName, String inPlace, String destPath, String token);
+
     public Map<String, Object> restoreNdmpBackupData(String srcClientName, String srcSubclientName, String srcBackupsetName, String srcInstanceName, String srcPath, String fromTime, String toTime, String targetClientName, String inPlace, String destPath, String token);
 
     public Map<String, Object> listMediaForAJob(String jobId, String token);
